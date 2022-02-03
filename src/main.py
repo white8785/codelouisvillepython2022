@@ -60,3 +60,11 @@ class Project:
         for project in topnfts:
             if project["address"] == self.address:
                 return project["tx_count"]
+
+
+for project in topnfts:
+    current_project = Project(project["address"])
+    if current_project.rank >= 3:
+        print(f"Above the bar: {current_project.__dict__}")
+    else:
+        print(f"Below the bar: {current_project.__dict__}")
