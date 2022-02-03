@@ -51,6 +51,7 @@ class Project:
         self.address = address
         self.tx_count = self.get_tx_count()
         self.rank = self.get_ranking()
+        self.name = self.get_name()
 
     # temp solution to shortcut the evaluation process that will be added later
     def get_ranking(self):
@@ -61,10 +62,31 @@ class Project:
             if project["address"] == self.address:
                 return project["tx_count"]
 
+    def get_name(self):
+        """
+        Static mapping until API calls are added
+
+        returns random name for a project
+        """
+        names = [
+          "BoredApes",
+          "AlienBoys",
+          "MutantApes",
+          "Doodles",
+          "Azuki",
+          "CryptoPunks",
+          "SavegeDroids",
+          "TheFrontier",
+          "TheSandbox",
+          "Decentraland"
+          ""
+        ]
+        return random.choice(names)
+
 
 for project in topnfts:
     current_project = Project(project["address"])
     if current_project.rank >= 3:
-        print(f"Above the bar: {current_project.__dict__}")
+        print(f"Above the bar: {current_project.name}")
     else:
-        print(f"Below the bar: {current_project.__dict__}")
+        print(f"Below the bar: {current_project.name}")
