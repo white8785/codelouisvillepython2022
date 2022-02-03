@@ -11,7 +11,7 @@ Using Google's BigQuery DataSet from the Ethereum blockchain this package will e
 1. Pull the code down:  `git clone git@github.com:white8785/codelouisvillepython2022.git`
 1. Enter project folder:  `cd codelouisvillepython2022`
 1. Install required Python packages:  `pip install -r requirements`
-1. Execute:  `python ./main.py`
+1. Execute:  `python ./src/main.py`
 
 ## Expectation
 (WIP) - Data will be pulled from [BigQuery](https://console.cloud.google.com/marketplace/product/ethereum/crypto-ethereum-blockchain?pli=1&project=unifi-254402), the Ethereum Blockchain will be inspected, and a chart for visualization will be displayed.
