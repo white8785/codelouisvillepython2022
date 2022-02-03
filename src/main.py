@@ -1,3 +1,5 @@
+import random
+
 # raw output from Google's BigQuery
 # later to be replaced by sqlalchemy query to Big Query
 topnfts = [
@@ -42,3 +44,19 @@ topnfts = [
       "tx_count": "60858"
     }
   ]
+
+
+class Project:
+    def __init__(self, address):
+        self.address = address
+        self.tx_count = self.get_tx_count()
+        self.rank = self.get_ranking()
+
+    # temp solution to shortcut the evaluation process that will be added later
+    def get_ranking(self):
+        return random.randint(1, 5)
+
+    def get_tx_count(self):
+        for project in topnfts:
+            if project["address"] == self.address:
+                return project["tx_count"]
